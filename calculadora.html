@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora - Neomorfismo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+  <main class="container-item">
+    <h1>Calculadora</h1>
+    <div class="container-resultado">
+      <p id="resultado" onkeyup="toLimit(this)" placeholder="Calcule..."></p>
+    </div>
+    <table class="container-botao">
+      <tr>
+        <td id="icone">
+          <div class="shadow imagem">
+            <button onclick="back('')"><img src="img/backspace.svg" width="24" height="17" alt="backspace"></button>
+          </div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('%')">%</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('/')">/</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('*')">x</button></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('7')">7</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('8')">8</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('9')">9</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('-')">-</button></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('4')">4</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('5')">5</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('6')">6</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('+')">+</button></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('1')">1</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('2')">2</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('3')">3</button></div>
+        </td>
+        <td rowspan="2">
+          <div class="color1">
+            <button class="color" onclick="calcular()" style="height: 116px;">=</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="shadow"><button class="botao1" onclick="insert('0')" style="width: 190px;">0</button></div>
+        </td>
+        <td>
+          <div class="shadow"><button class="botao1" onclick="insert('.')">.</button></div>
+        </td>
+      </tr>
+    </table>
+    <script>
+      function insert(num) {
+        let numero = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = numero + num;
+      }
+      function back() {
+        let resultado = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+      }
+      function calcular() {
+        let resultado = document.getElementById('resultado').innerHTML;
+        if(resultado) 
+        {
+          document.getElementById('resultado').innerHTML = eval(resultado)
+        }
+      }
+    </script>
+  </main>
+</body>
+
+</html>
