@@ -39,9 +39,9 @@ img {
   background-color: var(--cor-1);
   width: 450px;
   height: 700px;
+  margin: 0 auto;
   box-shadow: -8px -8px 20px #ffffff, 8px 8px 20px rgba(199, 199, 199, 0.5);
   border-radius: 10px;
-  margin: 0 auto;
 }
 
 .container-item h1 {
@@ -92,14 +92,6 @@ img {
   color: #fff;
 }
 
-#icone .imagem img:hover {
-  fill: #fff;
-}
-
-.shadow img:hover {
-  fill: white;
-}
-
 .container-botao button:hover {
   color: #fff;
   cursor: pointer;
@@ -129,4 +121,36 @@ img {
 
 .color1 .color:hover {
   color: var(--cor-1);
+}
+
+@media (max-width: 650px) {
+  .container-item {
+    width: 350px;
+    height: 600px;
+    
+    grid-template-rows: repeat(4, 1fr) !important;
+  }
+  .container-botao button {
+    width: 60px;
+    height: 40px;
+    margin: 6px 6px;
+    font: normal 600 18px "Open Sans", sans serif;
+  }
+  .container-resultado {
+    width: 290px;
+    height: 181px;
+    margin-bottom: 15px;
+  }
+  #icone .imagem img {
+    width: 18px;
+  }
+  .shadow {
+    display: inline-block;
+  }
+  .botao3 {
+    width: 132px !important;
+  }
+  .botao2 {
+    height: 92px !important;
+  }
 }
